@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - duration: 30
+      arrivalRate: 5
+      name: "Warm up"
+    - duration: 30
+      arrivalRate: 20
+      name: "Load test"
+
+scenarios:
+  - name: "Get Roles endpoint test"
+    flow:
+      - get:
+          url: "/api/roles"
+          
